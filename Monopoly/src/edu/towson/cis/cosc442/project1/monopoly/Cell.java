@@ -1,9 +1,10 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
 public abstract class Cell {
-	private boolean available = true;
 	private String name;
 	protected Player theOwner;
+	private boolean available = true;
+	protected int type;
 
 	public String getName() {
 		return name;
@@ -17,16 +18,8 @@ public abstract class Cell {
 		return 0;
 	}
 
-	public boolean isAvailable() {
-		return available;
-	}
-	
 	public abstract void playAction();
 
-	public void setAvailable(boolean available) {
-		this.available = available;
-	}
-	
 	void setName(String name) {
 		this.name = name;
 	}
@@ -38,4 +31,12 @@ public abstract class Cell {
     public String toString() {
         return name;
     }
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
 }
